@@ -34,7 +34,8 @@
     <div class="container is-fullhd">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">Iterative Keypoint Reward: Multi-Step Robotic Manipulation through Real-to-Sim-to-Real</h1>
+          <h1 class="title is-1 publication-title">A Real-to-Sim-to-Real Approach to Robotic Manipulation
+            with VLM-Generated Iterative Keypoint Rewards</h1>
           <div class="is-size-5 publication-authors">
             <!-- TODO: authors -->
           </div>
@@ -120,17 +121,17 @@
       <p>
         Task specification for robotic manipulation in open-world environments is inherently challenging. 
         Importantly, this process requires flexible and adaptive objectives that align with human intentions 
-        and can evolve through iterative feedback. We introduce \algname (\algabrvname), a framework that 
-        leverages VLMs to generate and refine visually grounded reward functions serving as dynamic task 
+        and can evolve through iterative feedback. We introduce Iterative Keypoint Reward (IKER), a framework 
+        that leverages VLMs to generate and refine visually grounded reward functions serving as dynamic task 
         specifications for multi-step manipulation tasks. Given RGB-D observations and free-form language 
-        instructions, \algabrvname samples keypoints from the scene and utilizes VLMs to generate Python-based 
-        reward functions conditioned on these keypoints. These functions operate on the spatial relationships 
+        instructions, IKER samples keypoints from the scene and utilizes VLMs to generate Python-based reward 
+        functions conditioned on these keypoints. These functions operate on the spatial relationships 
         between keypoints, enabling precise SE(3) control and leveraging VLMs as proxies to encode human 
         priors about robotic behaviors. We reconstruct real-world scenes in simulation and use the generated 
         rewards to train reinforcement learning policies, which are then deployed into the real world—forming 
         a real-to-sim-to-real loop. Our approach demonstrates notable capabilities across diverse scenarios, 
         including both prehensile and non-prehensile tasks, showcasing multi-step task execution, spontaneous 
-        error recovery, and on-the-fly strategy adjustments. The results highlight \algabrvname's effectiveness 
+        error recovery, and on-the-fly strategy adjustments. The results highlight IKER's effectiveness 
         in enabling robots to perform multi-step tasks in dynamic environments through iterative reward shaping 
         and minimal interaction.
       </p>
@@ -159,7 +160,7 @@
 </section>
 <hr class="rounded">
 <div class="rows">
-  <h2 class="title is-3">Overview of IKEA</h2>
+  <h2 class="title is-3">Overview of IKER</h2>
   <img src="static/images/method.png" class="method-image" />
   <p class="content has-text-justified">We first obtain keypoints from the scene. These, combined with a 
     human command and execution history, are processed by a Vision-Language Model (VLM) to generate code 
