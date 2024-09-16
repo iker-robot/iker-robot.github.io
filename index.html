@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Iterative Keypoint Reward: Multi-Step Robotic Manipulation through Real-to-Sim-to-Real">
+  <meta name="keywords" content="Robotic Manipulation, Foundation Models, Real2Sim, Sim2Real">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Iterative Keypoint Reward: Multi-Step Robotic Manipulation through Real-to-Sim-to-Real</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-fullhd">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Iterative Keypoint Reward: Multi-Step Robotic Manipulation through Real-to-Sim-to-Real</h1>
+          <div class="is-size-5 publication-authors">
+            <!-- TODO: authors -->
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <!-- TODO: affiliations -->
+          </div>
+
+          <!-- TODO: change corresponding links below -->
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/pdf/2011.12948"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2011.12948"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Video Link. -->
+              <span class="link-block">
+                <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/google/nerfies"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-widescreen">
+    <div class="hero-body">
+      <div class="container">
+        <div class="columns is-vcentered  is-centered">
+          <!-- <video id="teaser" autoplay muted loop controls height="100%" width="100%">
+            <source src="static/videos/teaser.mp4"
+                    type="video/mp4"> -->
+          </video>
+          </br>
+        </div>
+        <br>
+        <h2 class="subtitle has-text-centered">
+        </h2>
+      </div>
+    </div>
+  </div>
+
+<div class="container is-max-widescreen">
+<div class="columns is-centered has-text-centered">
+  <div class="column is-four-fifths">
+    <h2 class="title is-3">Abstract</h2>
+    <div class="content has-text-justified">
+      <p>
+        Task specification for robotic manipulation in open-world environments is inherently challenging. 
+        Importantly, this process requires flexible and adaptive objectives that align with human intentions 
+        and can evolve through iterative feedback. We introduce \algname (\algabrvname), a framework that 
+        leverages VLMs to generate and refine visually grounded reward functions serving as dynamic task 
+        specifications for multi-step manipulation tasks. Given RGB-D observations and free-form language 
+        instructions, \algabrvname samples keypoints from the scene and utilizes VLMs to generate Python-based 
+        reward functions conditioned on these keypoints. These functions operate on the spatial relationships 
+        between keypoints, enabling precise SE(3) control and leveraging VLMs as proxies to encode human 
+        priors about robotic behaviors. We reconstruct real-world scenes in simulation and use the generated 
+        rewards to train reinforcement learning policies, which are then deployed into the real world—forming 
+        a real-to-sim-to-real loop. Our approach demonstrates notable capabilities across diverse scenarios, 
+        including both prehensile and non-prehensile tasks, showcasing multi-step task execution, spontaneous 
+        error recovery, and on-the-fly strategy adjustments. The results highlight \algabrvname's effectiveness 
+        in enabling robots to perform multi-step tasks in dynamic environments through iterative reward shaping 
+        and minimal interaction.
+      </p>
+    </div>
+  </div>
+</div>
+
+
+
+<section class="hero is-light is-small">
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <!-- TODO: Paper video. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Video</h2>
+      </div>
+    </div>
+    <!--/ Paper video. -->
+  </div>
+
+</section>
+<hr class="rounded">
+<div class="rows">
+  <h2 class="title is-3">Overview of IKEA</h2>
+  <img src="static/images/method.png" class="method-image" />
+  <p class="content has-text-justified">We first obtain keypoints from the scene. These, combined with a 
+    human command and execution history, are processed by a Vision-Language Model (VLM) to generate code 
+    that defines the reward function. We transfer the scene into simulation, and the reward function is 
+    used to train a policy, which is subsequently executed in the real world. This process is repeated 
+    across multiple steps to enable long-horizon task execution.</b>
+  </p>
+</div>
+
+<hr class="rounded">
+<div class="rows">
+  <h2 class="title is-3">Skill Chaining</h2>
+
+  <!-- TODO: descriptions -->
+  <p class="content has-text-justified"></p>
+  
+  <div class="columns">
+    <div class="column has-text-centered">
+      <!-- <video id="dist1"
+        controls autoplay loop muted
+        width="100%">
+        <source src="static/videos/skill_chaining.mp4" 
+        type="video/mp4"> -->
+      </video>
+    </div>
+  </div>
+</div>
+
+<hr class="rounded">
+<div class="rows">
+  <h2 class="title is-3">Robust to Human Intervention</h2>
+
+  <!-- TODO: descriptions -->
+  <p class="content has-text-justified"></p>
+  
+  <div class="columns">
+    <div class="column has-text-centered">
+      <!-- <video id="dist1"
+        controls autoplay loop muted
+        width="100%">
+        <source src="static/videos/human_intervention.mp4" 
+        type="video/mp4"> -->
+      </video>
+    </div>
+  </div>
+</div>
+
+<hr class="rounded">
+<div class="rows">
+  <h2 class="title is-3">Self Correction</h2>
+
+  <!-- TODO: descriptions -->
+  <p class="content has-text-justified"></p>
+  
+  <div class="columns">
+    <div class="column has-text-centered">
+      <!-- <video id="dist1"
+        controls autoplay loop muted
+        width="100%">
+        <source src="static/videos/minor_adjustment.mp4" 
+        type="video/mp4"> -->
+      </video>
+    </div>
+  </div>
+</div>
+
+<hr class="rounded">
+<div class="rows">
+  <h2 class="title is-3">Robust to Human Intervention</h2>
+
+  <!-- TODO: descriptions -->
+  <p class="content has-text-justified"></p>
+  
+  <div class="columns">
+    <div class="column has-text-centered">
+      <!-- <video id="dist1"
+        controls autoplay loop muted
+        width="100%">
+        <source src="static/videos/human_intervention.mp4" 
+        type="video/mp4"> -->
+      </video>
+    </div>
+  </div>
+</div>
+
+<hr class="rounded">
+<div class="rows">
+  <h2 class="title is-3">Replan: Learn to Regrasp</h2>
+
+  <!-- TODO: descriptions -->
+  <p class="content has-text-justified"></p>
+  
+  <div class="columns">
+    <div class="column has-text-centered">
+      <!-- <video id="dist1"
+        controls autoplay loop muted
+        width="100%">
+        <source src="static/videos/replanning.mp4" 
+        type="video/mp4"> -->
+      </video>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- TODO: BibTeX -->
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column">
+        <div class="content has-text-centered">
+          <p>
+            Website template borrowed from <a href="https://nerfies.github.io">Nerfies</a>,
+            <a href="https://rekep-robot.github.io">ReKep</a>, and <a href="https://voxposer.github.io/">VoxPoser</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
