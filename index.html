@@ -129,10 +129,9 @@
   <div class="container is-max-widescreen">
     <div class="hero-body">
       <div class="container">
-        <div class="columns is-vcentered  is-centered">
-          <!-- <video id="teaser" autoplay muted loop controls height="100%" width="100%">
-            <source src="static/videos/teaser.mp4"
-                    type="video/mp4"> -->
+        <div class="columns is-vcentered is-centered">
+          <video id="teaser" autoplay muted loop controls style="max-width: 700px; width: 100%;" height="100%">
+            <source src="static/videos/Teaser_new.mov" type="video/mp4">
           </video>
           </br>
         </div>
@@ -194,12 +193,20 @@
 </section>
 <hr class="rounded">
 <div class="rows">
-  <h2 class="title is-3">Overview of IKER</h2>
-  <img src="static/images/method.png" class="method-image" />
+  <h2 class="title is-3">Iterative Keypoint Reward (IKER)</h2>
+  <div style="text-align: center;">
+    <img src="static/images/iker.svg" class="method-image" style="max-width: 60%;" />
+  </div>
   <p class="content has-text-justified">We first obtain keypoints from the scene. These, combined with a 
     human command and execution history, are processed by a Vision-Language Model (VLM) to generate code 
-    that defines the reward function. We transfer the scene into simulation, and the reward function is 
-    used to train a policy, which is subsequently executed in the real world. This process is repeated 
+    which maps the keypoints to reward function.</b>
+  </p>
+  <h2 class="title is-3">Method Overview</h2>
+  <div style="text-align: center;">
+    <img src="static/images/overview.svg" class="method-image" style="max-width: 80%;" />
+  </div>
+  <p class="content has-text-justified">We transfer the scene into simulation and the iterative keypoint reward is 
+    used to train a policy. This policy is subsequently deployed in the real world. This process is repeated 
     across multiple steps to enable long-horizon task execution.</b>
   </p>
 </div>
@@ -213,22 +220,28 @@
   
   <div class="columns">
     <div class="column has-text-centered">
-      <video id="skill1"
+      <!-- <video id="skill1"
         controls autoplay loop muted
         width="100%">
         <source src="static\videos\Book_Place.mp4" 
         type="video/mp4">
-      </video>
-      <video id="skill2"
+      </video> -->
+      <!-- <video id="skill2"
         controls autoplay loop muted
         width="100%">
         <source src="static\videos\Skill_Chaining.mp4" 
         type="video/mp4">
-      </video>
+      </video> -->
       <video id="skill3"
         controls autoplay loop muted
-        width="100%">
-        <source src="static\videos\Four_Shoes.mp4" 
+        width="60%">
+        <source src="static\videos\Four_Shoes.MOV" 
+        type="video/mp4">
+      </video>
+      <video id="skill4"
+        controls autoplay loop muted
+        width="60%">
+        <source src="static\videos\Shoe_Push.MOV" 
         type="video/mp4">
       </video>
     </div>
@@ -246,8 +259,8 @@
     <div class="column has-text-centered">
       <video id="human1"
         controls autoplay loop muted
-        width="100%">
-        <source src="static/videos/Human_Intervention.mp4" 
+        width="60%">
+        <source src="static/videos/Human_Intervention.MOV" 
         type="video/mp4">
       </video>
     </div>
@@ -265,7 +278,7 @@
     <div class="column has-text-centered">
       <video id="dist1"
         controls autoplay loop muted
-        width="100%">
+        width="60%">
         <source src="static/videos/Minor_Adjustment.mp4" 
         type="video/mp4">
       </video>
@@ -275,7 +288,7 @@
 
 <hr class="rounded">
 <div class="rows">
-  <h2 class="title is-3">Replan: Learn to Regrasp</h2>
+  <h2 class="title is-3">Replan to Regrasp</h2>
 
   <!-- TODO: descriptions -->
   <p class="content has-text-justified"></p>
@@ -284,8 +297,8 @@
     <div class="column has-text-centered">
       <video id="dist1"
         controls autoplay loop muted
-        width="100%">
-        <source src="static/videos/Replanning.mp4" 
+        width="60%">
+        <source src="static/videos/Replanning.MOV" 
         type="video/mp4">
       </video>
     </div>
