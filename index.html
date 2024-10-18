@@ -195,19 +195,24 @@
 <div class="rows">
   <h2 class="title is-3">Iterative Keypoint Reward (IKER)</h2>
   <div style="text-align: center;">
-    <img src="static/images/iker.svg" class="method-image" style="max-width: 60%;" />
+    <img src="static/images/iker.png" class="method-image" style="max-width: 60%;" />
   </div>
-  <p class="content has-text-justified">We first obtain keypoints from the scene. These, combined with a 
-    human command and execution history, are processed by a Vision-Language Model (VLM) to generate code 
-    which maps the keypoints to reward function.</b>
+  <p class="content has-text-justified">Given RGB-D observations, we first obtain keypoints in the scene. 
+    These keypoints, overlaid on the scene along with human commands and execution history, are passed through GPT-4o, which maps the keypoints into a reward function, allowing the robot to follow task objectives. 
+    We call these reward functions Iterative Keypoint Reward (IKER).
+    IKER is generated iteratively and is dynamic and adaptable. 
+    By capturing spatial relationships between keypoints, IKER enables precise SE(3) control of objects.
   </p>
   <h2 class="title is-3">Method Overview</h2>
   <div style="text-align: center;">
-    <img src="static/images/overview.svg" class="method-image" style="max-width: 80%;" />
+    <img src="static/images/overview.svg" class="method-image" style="max-width: 100%;" />
   </div>
-  <p class="content has-text-justified">We transfer the scene into simulation and the iterative keypoint reward is 
-    used to train a policy. This policy is subsequently deployed in the real world. This process is repeated 
-    across multiple steps to enable long-horizon task execution.</b>
+  <p class="content has-text-justified">Our framework follows a real-to-sim-to-real approach to robotic manipulation. 
+    First, the real-world scene is reconstructed in simulation using 3D meshes of objects and point cloud of the environment. 
+    GPT-4o generates IKER using real-world observations which is then used to train reinforcement learning policy in simulation
+    This policy is subsequently deployed in the real-world. 
+    Domain randomization is employed during training to bridge the real-to-sim and sim-to-real gap, making policies robust in real-world scenarios. 
+    The framework supports both prehensile and non-prehensile tasks and includes features like multi-step task chaining and error recovery, which allow robots to adapt dynamically during task execution.
   </p>
 </div>
 
@@ -219,92 +224,89 @@
   <p class="content has-text-justified"></p>
   
   <div class="columns">
-    <div class="column has-text-centered">
-      <!-- <video id="skill1"
-        controls autoplay loop muted
-        width="100%">
-        <source src="static\videos\Book_Place.mp4" 
-        type="video/mp4">
-      </video> -->
-      <!-- <video id="skill2"
-        controls autoplay loop muted
-        width="100%">
-        <source src="static\videos\Skill_Chaining.mp4" 
-        type="video/mp4">
-      </video> -->
-      <video id="skill3"
-        controls autoplay loop muted
-        width="60%">
-        <source src="static\videos\Four_Shoes.MOV" 
-        type="video/mp4">
-      </video>
-      <video id="skill4"
-        controls autoplay loop muted
-        width="60%">
-        <source src="static\videos\Shoe_Push.MOV" 
-        type="video/mp4">
-      </video>
+    <div class="column has-text-centered" style="display: flex; justify-content: center; gap: 20px;">
+      
+      <figure style="width: 45%;">
+        <video id="skill3" controls autoplay loop muted width="100%">
+          <source src="static/videos/Four_Shoes_new.MOV" type="video/mp4">
+        </video>
+        <figcaption>"Place shoes on the rack."</figcaption>
+      </figure>
+      
+      <figure style="width: 44%;">
+        <video id="skill4" controls autoplay loop muted width="100%">
+          <source src="static/videos/Shoe_Push_new.MOV" type="video/mp4">
+        </video>
+        <figcaption>"Place shoes on the rack."</figcaption>
+      </figure>
+      
     </div>
   </div>
 </div>
 
 <hr class="rounded">
 <div class="rows">
-  <h2 class="title is-3">Robust to Human Intervention</h2>
+  <h2 class="title is-3">Robustness</h2>
 
   <!-- TODO: descriptions -->
-  <p class="content has-text-justified"></p>
-  
+  <p class="content has-text-justified">Since our plans are open-loop, our framework is robust to disturbances. On the left, a human intervenes with robot execution. On the right, the robot makes a mistake by placing the left shoe little far. In both the cases, robot is able to correct the behavior.</p>
+
   <div class="columns">
-    <div class="column has-text-centered">
-      <video id="human1"
-        controls autoplay loop muted
-        width="60%">
-        <source src="static/videos/Human_Intervention.MOV" 
-        type="video/mp4">
-      </video>
+    <div class="column has-text-centered" style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+
+      <!-- First Video: Robust to Human Intervention -->
+      <figure style="width: 45%;">
+        <video id="human1" controls autoplay loop muted width="100%">
+          <source src="static/videos/Human_Intervention_new.MOV" type="video/mp4">
+        </video>
+        <figcaption>"Place the shoes on the rack"</figcaption>
+      </figure>
+
+      <!-- Second Video: Self Correction -->
+      <figure style="width: 45%;">
+        <video id="dist1" controls autoplay loop muted width="100%">
+          <source src="static/videos/Minor_Adjustment_new.MOV" type="video/mp4">
+        </video>
+        <figcaption>"Place the shoes on the rack</figcaption>
+      </figure>
+
     </div>
   </div>
 </div>
 
-<hr class="rounded">
-<div class="rows">
-  <h2 class="title is-3">Self Correction</h2>
-
-  <!-- TODO: descriptions -->
-  <p class="content has-text-justified"></p>
-  
-  <div class="columns">
-    <div class="column has-text-centered">
-      <video id="dist1"
-        controls autoplay loop muted
-        width="60%">
-        <source src="static/videos/Minor_Adjustment.mp4" 
-        type="video/mp4">
-      </video>
-    </div>
-  </div>
-</div>
 
 <hr class="rounded">
 <div class="rows">
   <h2 class="title is-3">Replan to Regrasp</h2>
 
   <!-- TODO: descriptions -->
-  <p class="content has-text-justified"></p>
+  <p class="content has-text-justified">Our framework can predict new plans when previous plans are unfeasible. In this case, the robot fails grasping the book. It proposes a new plan to first push the book to make it graspable, and then stows it.</p>
   
   <div class="columns">
     <div class="column has-text-centered">
-      <video id="dist1"
-        controls autoplay loop muted
-        width="60%">
-        <source src="static/videos/Replanning.MOV" 
-        type="video/mp4">
-      </video>
+      <figure style="width: 60%; margin: 0 auto;">
+        <video id="dist1" controls autoplay loop muted width="100%">
+          <source src="static/videos/Replanning_new.MOV" type="video/mp4">
+        </video>
+        <figcaption>"Stow the book"</figcaption>
+      </figure>
     </div>
   </div>
 </div>
 
+<hr class="rounded">
+<div class="rows"></div>
+  <h2 class="title is-3">Results</h2>
+  <div style="text-align: center;">
+    <img src="static/images/results.png" class="method-image" style="max-width: 80%;" />
+  </div>
+  <p class="content has-text-justified" style="margin-bottom: 0px;">We present results demonstrating the effectiveness of using keypoints and object poses to query VLMs in both simulation and real-world. The key findings are as follows:</p>
+  <ul style="list-style-type: disc; margin-left: 20px; margin-top: 0px;">
+    <li>Both keypoints and object poses effectively specify SE(3) task objectives, providing robust guidance for manipulation tasks.</li>
+    <li>VLMs exhibit superior reasoning capabilities when processing keypoints compared to object poses, leading to more accurate task execution.</li>
+    <li>The observed sim-to-real gap is minimal, highlighting the success of domain randomization in bridging real-to-sim and sim-to-real gaps.</li>
+  </ul>
+</div>
 
 
 <!-- TODO: BibTeX -->
