@@ -155,3 +155,10 @@ body {
 #interpolation-image-wrapper img {
   border-radius: 5px;
 }
+
+.conference-name {
+  font-weight: bold;
+  padding-top: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
